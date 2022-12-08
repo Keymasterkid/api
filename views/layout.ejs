@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#222329" />
+    <meta
+      name="description"
+      content="Learn wonderful facts for free with our API."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <title><%= title %></title>
+  </head>
+  
+  <body>
+    <header class="header">
+      <a href="/" class="logo"><h2>FUN FACTS</h2></a>
+
+      <nav class="navbar">
+        <li class="navbar__item">
+          <a href="/">Home</a>
+        </li>
+        <li class="navbar__item">
+          <a href="/docs">Docs</a>
+        </li>
+        <li class="navbar__item">
+          <a href="https://github.com/ddVital/fun-facts-api#readme">About</a>
+        </li>
+        <li class="navbar__item">
+          <% if (user) { %>
+          <a href="/user" class="header__right">Profile</a>
+          <% } else { %>
+          <a href="/login" class="btn btn--auth">Try for Free</a>
+          <% } %>
+        </li>
+      </nav>
+      <i class="fa fa-bars" id="bars"></i>
+    </header>
+
+    <div class="navigation" id="navigation">
+      <li class="navigation__item">
+        <h2>Fun facts</h2>
+      </li>
+      <li class="navigation__item">
+        <a href="/">Home</a>
+      </li>
+      <li class="navigation__item">
+        <a href="/docs">Docs</a>
+      </li>
+      <% if (user) { %>
+        <li class="navigation__item">
+          <a href="/user">Account</a>
+        </li>
+        <li class="navigation__item">
+          <a href="/user/security">Security</a>
+        </li>
+        <li class="navigation__item">
+          <a href="/user/api-key">Api key</a>
+        </li>
+      <% } %>
+      <li class="navigation__item">
+        <a href="/about">About</a>
+      </li>
+    </div>
+
+    <% if (!user) { %>
+      <div class="authentication">
+        <a href="/login" class="btn btn--secondary">Sign In</a>
+        <a href="/register" class="btn">Sign Up</a>
+      </div>
+    <% } %>
+    
+    <%- body %>
+
+    <footer>
+      <p>
+        This project was made by
+        <a href="https://github.com/ddVital">ddVital</a>.
+      </p>
+      <a href="https://github.com/ddVital/fun-facts-api">
+        <i class="fab fa-github"></i>
+      </a>
+    </footer>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<div class="docs">
+  <section>
+    <h1>Getting started</h1>
+    <p>
+      Please, use your <a href="/user/api-key" class="docs__link">API Key</a> in
+      every API call you make. Our platform only processes the API requests with
+      an API key included. The API key linked to your account is used to take
+      count of the calls you make to FunFacts platform. We reset the count every
+      day at midnight.
+    </p>
+
+    <p>
+      if you try to call the api without an API key you'll get the following
+      error.
+    </p>
+    <code class="example">
+      { "message": "API token authentication failed..." }
+    </code>
+  </section>
+
+  <hr />
+
+  <section>
+    <h1>Get all facts</h1>
+
+    <p>Get all facts or query for a specific topic and/or language.</p>
+
+    <div class="parameters">
+      <table>
+        <tbody>
+          <tr>
+            <th colspan="3">Parameters</th>
+          </tr>
+          <tr>
+            <td><code>lang</code></td>
+            <td>optional</td>
+            <td>
+              <p>
+                You can use the lang parameter to get the output in your
+                language.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td><code>Category</code></td>
+            <td>optional</td>
+            <td>
+              <p>
+                You can use the category parameter to get the facts about that
+                topic.
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <h4>API call example</h4>
+      <code class="example">
+        https://<%= url %>/api/all?category=boat&apiToken=<a href="/user/api-key" class="docs__link">{your_api_key}</a>
+      </code>
+    </div>
+  </section>
+
+  <hr />
+
+  <section>
+    <h1>Get specific facts</h1>
+
+    <p>If you want to get a specific fact.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <th colspan="3">Parameters</th>
+        </tr>
+        <tr>
+          <td><code>id</code></td>
+          <td>required</td>
+          <td>
+            <p>
+              You can use the lang parameter to get the output in your language.
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div>
+      <h4>API call example</h4>
+      <code class="example">
+        https://<%= url %>/api/fact?factId=60d79724fab161223c6dabcf&apiToken=<a href="/user/api-key"class="docs__link">{your_api_key}</a>
+      </code>
+    </div>
+  </section>
+</div>
